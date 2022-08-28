@@ -9,4 +9,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "main.py", "--host=127.0.0.1"]
+CMD [ "python3", "main.py"]
