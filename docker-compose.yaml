@@ -7,7 +7,7 @@ services:
       - HTTP_PORT=7000
       - JWT_SECRET=secret
     ports:
-      - "4200:4200"
+      - "5100:5000"
 
   core-api:
     build: ./core-api
@@ -19,7 +19,7 @@ services:
       - JWT_SECRET=secret
       - REDIS_URL=redis://redis:6379/0
     ports:
-      - "6200:6200"
+      - "5200:5000"
 
   psp-connector:
     build: ./psp-connector
@@ -28,6 +28,8 @@ services:
     restart: always
     environment:
       - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "5300:5000"
 
   redis:
     image: redis:6.0-alpine

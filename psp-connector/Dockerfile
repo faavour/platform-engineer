@@ -7,9 +7,8 @@ COPY requirements.txt requirements.txt
 
 RUN pip3 install -r requirements.txt
 
-# RUN export HTTP_PORT=9000
 RUN export REDIS_URL=redis://redis:6379/0
 
 COPY . .
 
-CMD [ "python3", "main.py",]
+CMD [ "python3", "./main.py"]
