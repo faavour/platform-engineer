@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  auth-api:
+    build: ./auth-api
+    restart: always
+    environment:
+      - HTTP_PORT=7000
+      - JWT_SECRET=secret
+    ports:
+      - "4200:4200"
+
+  core-api:
+    build: ./core-api
+    depends_on:
+      - redis
+    restart: always
+    environment:
+      - HTTP_PORT=6200
+      - JWT_SECRET=secret
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "6200:6200"
+
+  psp-connector:
+    build: ./psp-connector
+    depends_on:
+      - redis
+    restart: always
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+  redis:
+    image: redis:6.0-alpine
+    restart: always
+    ports:
+      - "6379"

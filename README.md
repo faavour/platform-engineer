@@ -66,4 +66,4 @@ Please spend no more than 1-2 hours on this exercise.
 
 [Auth API]: auth-api
 [Core API]: core-api
-[PSP Connector]: psp-connector
+[PSP Connector]: psp-connector# platform-engineer

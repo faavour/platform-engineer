@@ -66,5 +66,5 @@ if __name__ == '__main__':
     app.config['JWT_SECRET'] = jwt_secret
 
     # Run app
-    app.run(host='0.0.0.0', port=http_port, threaded=True)
+    app.run(host='127.0.0.1', port=http_port, threaded=True)
     
